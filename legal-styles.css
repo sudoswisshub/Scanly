@@ -1,0 +1,116 @@
+:root {
+    --primary: hsl(250, 80%, 60%);
+    --primary-light: hsl(250, 80%, 70%);
+    --accent: hsl(320, 80%, 60%);
+    --bg: #0a0a0c;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+    --text: #f0f0f0;
+    --text-muted: #a0a0a0;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f8fafc;
+        --card-bg: rgba(0, 0, 0, 0.02);
+        --border: rgba(0, 0, 0, 0.1);
+        --text: #0f172a;
+        --text-muted: #64748b;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    color: var(--primary-light);
+}
+
+p {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+
+ul {
+    margin: 20px 0;
+    padding-left: 24px;
+    color: var(--text-muted);
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+.footer {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+    h1 { font-size: 2.2rem; }
+    .container { padding-top: 40px; }
+    .card { padding: 24px; }
+}
